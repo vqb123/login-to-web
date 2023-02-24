@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebTest</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://i.imgur.com/3RJ1qez.jpg" type="image/x-icon">
+</head>
+<body>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form>
+            <div class="user-box">
+                <input type="text" name="username" required="">
+                <label>Username</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="password" required="">
+                <label>Password</label>
+                <button type="button" onclick="togglePassword()">Show Password</button>
+            </div>
+            <a href="#" onclick="checkLogin()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Submit
+            </a>
+        </form>
+    </div>
+    <script>
+        function checkLogin() {
+            var username = document.getElementsByName("username")[0].value;
+            var password = document.getElementsByName("password")[0].value;
+            if (username === "vqb123" && password === "012345678") {
+                window.location.href = "https://vqb123.github.io/My-profile/";
+            } else {
+                alert("Tài khoản hoặc mật khẩu không đúng!");
+            }
+        }
+        function togglePassword() {
+            var passwordInput = document.getElementsByName("password")[0];
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>
